@@ -14,6 +14,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Path alias (used by shadcn/ui and app imports) */
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
+
     /* Linting */
     "strict": true,
     "noUncheckedIndexedAccess": true,

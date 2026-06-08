@@ -34,9 +34,9 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 3 | Scaffold Tauri 2 + React/TS, `tauri dev` opens window | ✅ | window opened; toolchain verified end-to-end |
 | 4 | Merge scaffold into repo (preserve `docs/` + `.git`) | ✅ | runs from repo; build dirs ignored |
 | 5 | Folder structure per checklist §7 | ✅ | module + Rust domain dirs (.gitkeep) |
-| 6 | Add Tailwind + shadcn/ui | ⬜ | |
-| 7 | Add Zustand + TanStack Query | ⬜ | |
-| 8 | Add react-hook-form + zod | ⬜ | |
+| 6 | Add Tailwind + shadcn/ui | 🔄 | Tailwind v4 wired + verified (blue heading); shadcn next |
+| 7 | Add Zustand + TanStack Query | ✅ | installed; providers wired when first used |
+| 8 | Add react-hook-form + zod | ✅ | installed; used from Week 3 |
 | 9 | Add rusqlite (Rust side) | ⬜ | |
 | 10 | Add supabase-js (TS side) | ⬜ | |
 | 11 | TS strict mode, ESLint, Prettier | ✅ | flat ESLint 9 config; `noUncheckedIndexedAccess` on |
