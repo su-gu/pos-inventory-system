@@ -1,0 +1,8 @@
+dist
+coverage
+pnpm-lock.yaml
+src-tauri/target
+src-tauri/gen
+src-tauri/Cargo.lock
+# Keep authored docs (planning spec, ADRs, status) free of reflow churn
+**/*.md

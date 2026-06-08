@@ -39,15 +39,15 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 8 | Add react-hook-form + zod | ⬜ | |
 | 9 | Add rusqlite (Rust side) | ⬜ | |
 | 10 | Add supabase-js (TS side) | ⬜ | |
-| 11 | TS strict mode, ESLint, Prettier | ⬜ | |
-| 12 | Husky + lint-staged + `tsc --noEmit` hook | ⬜ | |
-| 13 | First conventional commit | ⬜ | nothing committed yet |
-| 14 | GitHub repo (private) + push | ⬜ | |
+| 11 | TS strict mode, ESLint, Prettier | ✅ | flat ESLint 9 config; `noUncheckedIndexedAccess` on |
+| 12 | Husky + lint-staged + `tsc --noEmit` hook | ✅ | pre-commit live |
+| 13 | First conventional commit | ✅ | baseline scaffold + docs |
+| 14 | GitHub repo (private) + push | ✅ | personal account via PAT/HTTPS |
 | 15 | CI: install / tsc / lint / test on push | ⬜ | |
 | 16 | Supabase account + project provisioned | ⬜ | |
 | 17 | `.env.local` (gitignored) + `.env.example` | ⬜ | |
 | 18 | One successful Supabase call → "Cloud OK" (gate 6) | ⬜ | |
-| 19 | Vitest wired (smoke test) | ⬜ | |
+| 19 | Vitest wired (smoke test) | ✅ | `tests/smoke.test.ts` green |
 
 ### Shop-machine (deferred — needs Windows + hardware)
 

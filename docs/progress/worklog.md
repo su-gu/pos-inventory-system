@@ -5,6 +5,19 @@ when you change your mind mid-build, write down *why* here (or as an ADR in `../
 
 ---
 
+## 2026-06-08 — Repo hygiene + remote
+
+**Done**
+- Pushed baseline to private GitHub repo (personal account, PAT over HTTPS) — covers R9.
+- Repo hygiene: ESLint 9 flat config (typescript-eslint, react-hooks, react-refresh) + Prettier (single quotes, width 100, trailing-all; markdown prettier-ignored to keep spec docs pristine). Strict TS bumped with `noUncheckedIndexedAccess`. Vitest wired with a smoke test. Husky pre-commit runs lint-staged + `tsc --noEmit`. All green.
+
+**Next**
+- Frontend libs: Tailwind v4 + shadcn/ui, Zustand, TanStack Query, react-hook-form + zod.
+- Then rusqlite (gate 5: SQLite file on disk) and Supabase project + supabase-js (gate 6: Cloud OK).
+- CI workflow (tsc/lint/test on push).
+
+---
+
 ## 2026-06-08 — Scaffold merged + structure laid
 
 **Done**
