@@ -37,13 +37,13 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 6 | Add Tailwind + shadcn/ui | ✅ | Tailwind v4 + shadcn (Radix/Nova, Neutral, Lucide); Button renders |
 | 7 | Add Zustand + TanStack Query | ✅ | installed; providers wired when first used |
 | 8 | Add react-hook-form + zod | ✅ | installed; used from Week 3 |
-| 9 | Add rusqlite (Rust side) | ⬜ | |
+| 9 | Add rusqlite (Rust side) | ✅ | `bundled`; `db_healthcheck` writes `pos-dev.sqlite` |
 | 10 | Add supabase-js (TS side) | ⬜ | |
 | 11 | TS strict mode, ESLint, Prettier | ✅ | flat ESLint 9 config; `noUncheckedIndexedAccess` on |
 | 12 | Husky + lint-staged + `tsc --noEmit` hook | ✅ | pre-commit live |
 | 13 | First conventional commit | ✅ | baseline scaffold + docs |
 | 14 | GitHub repo (private) + push | ✅ | personal account via PAT/HTTPS |
-| 15 | CI: install / tsc / lint / test on push | 🔄 | GitHub Actions workflow authored |
+| 15 | CI: install / tsc / lint / test on push | ✅ | GitHub Actions green on push/PR |
 | 16 | Supabase account + project provisioned | ⬜ | |
 | 17 | `.env.local` (gitignored) + `.env.example` | ⬜ | |
 | 18 | One successful Supabase call → "Cloud OK" (gate 6) | ⬜ | |
@@ -68,7 +68,7 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 2 | Button prints "Hello from POS" on thermal printer | 🚫 |
 | 3 | Button prints barcode label | 🚫 |
 | 4 | Scanner types barcode into input | 🚫 |
-| 5 | SQLite file created on disk, openable in DB Browser | ⬜ |
+| 5 | SQLite file created on disk, openable in DB Browser | ✅ |
 | 6 | One successful Supabase call → "Cloud OK" | ⬜ |
 | 7 | `tauri build` installs + launches on clean Windows VM | 🚫 |
 

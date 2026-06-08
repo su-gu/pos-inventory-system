@@ -2,15 +2,36 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import { invoke } from '@tauri-apps/api/core';
 import { Button } from '@/components/ui/button';
+import { cloudHealthcheck } from '@/lib/supabase';
 import './App.css';
 
 function App() {
   const [greetMsg, setGreetMsg] = useState('');
   const [name, setName] = useState('');
+  const [dbStatus, setDbStatus] = useState('');
+  const [cloudStatus, setCloudStatus] = useState('');
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
     setGreetMsg(await invoke('greet', { name }));
+  }
+
+  async function checkDb() {
+    try {
+      const res = await invoke<{ path: string; rows: number }>('db_healthcheck');
+      setDbStatus(`SQLite OK — ${res.rows} row(s) at ${res.path}`);
+    } catch (e) {
+      setDbStatus(`SQLite error: ${String(e)}`);
+    }
+  }
+
+  async function checkCloud() {
+    try {
+      const ok = await cloudHealthcheck();
+      setCloudStatus(ok ? 'Cloud OK' : 'Cloud unreachable (check .env.local)');
+    } catch (e) {
+      setCloudStatus(`Cloud error: ${String(e)}`);
+    }
   }
 
   return (
@@ -45,6 +66,17 @@ function App() {
         <Button type="submit">Greet</Button>
       </form>
       <p>{greetMsg}</p>
+
+      <div className="row">
+        <Button type="button" onClick={checkDb}>
+          Check SQLite
+        </Button>
+        <Button type="button" onClick={checkCloud}>
+          Check Cloud
+        </Button>
+      </div>
+      <p>{dbStatus}</p>
+      <p>{cloudStatus}</p>
     </main>
   );
 }
