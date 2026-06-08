@@ -34,7 +34,7 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 3 | Scaffold Tauri 2 + React/TS, `tauri dev` opens window | ✅ | window opened; toolchain verified end-to-end |
 | 4 | Merge scaffold into repo (preserve `docs/` + `.git`) | ✅ | runs from repo; build dirs ignored |
 | 5 | Folder structure per checklist §7 | ✅ | module + Rust domain dirs (.gitkeep) |
-| 6 | Add Tailwind + shadcn/ui | 🔄 | Tailwind v4 wired + verified (blue heading); shadcn next |
+| 6 | Add Tailwind + shadcn/ui | ✅ | Tailwind v4 + shadcn (Radix/Nova, Neutral, Lucide); Button renders |
 | 7 | Add Zustand + TanStack Query | ✅ | installed; providers wired when first used |
 | 8 | Add react-hook-form + zod | ✅ | installed; used from Week 3 |
 | 9 | Add rusqlite (Rust side) | ⬜ | |
@@ -43,7 +43,7 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 12 | Husky + lint-staged + `tsc --noEmit` hook | ✅ | pre-commit live |
 | 13 | First conventional commit | ✅ | baseline scaffold + docs |
 | 14 | GitHub repo (private) + push | ✅ | personal account via PAT/HTTPS |
-| 15 | CI: install / tsc / lint / test on push | ⬜ | |
+| 15 | CI: install / tsc / lint / test on push | 🔄 | GitHub Actions workflow authored |
 | 16 | Supabase account + project provisioned | ⬜ | |
 | 17 | `.env.local` (gitignored) + `.env.example` | ⬜ | |
 | 18 | One successful Supabase call → "Cloud OK" (gate 6) | ⬜ | |
