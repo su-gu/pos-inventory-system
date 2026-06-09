@@ -5,6 +5,24 @@ when you change your mind mid-build, write down *why* here (or as an ADR in `../
 
 ---
 
+## 2026-06-08 — Week 1 Mac-complete (gates 5 + 6 green)
+
+**Done**
+- rusqlite (bundled) wired via a `db` module; `db_healthcheck` creates `pos-dev.sqlite` in the app data dir and writes rows. Gate 5 ✅.
+- Supabase project provisioned (ap-south-1 Mumbai). `@supabase/supabase-js` client + `cloudHealthcheck()` (GoTrue health endpoint). `.env.local` (gitignored, new-format publishable key) + committed `.env.example`. "Check Cloud" → Cloud OK. Gate 6 ✅.
+- CI workflow (typecheck/lint/test) green on push.
+- Pre-commit hook caught the missing `@supabase/supabase-js` dep before commit — working as intended.
+
+**State:** Every Mac-doable Week 1 item complete. Remaining Week 1 = shop-machine hardware (gate 2–4) + Windows installer (gate 7).
+
+**Next options**
+- Shop-machine session: TVS thermal/label printers + scanner + `tauri build` installer.
+- Or start Week 2 on the Mac: schema + migration runner + event log + PIN auth.
+
+**Note:** shell is fish — heredocs (`<<EOF`) fail; use `echo >` / `echo >>` for file creation.
+
+---
+
 ## 2026-06-08 — Repo hygiene + remote
 
 **Done**

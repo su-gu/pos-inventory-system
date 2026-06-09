@@ -6,7 +6,7 @@
 
 - **Last updated:** 2026-06-08
 - **Current phase:** Phase 1 — Foundation
-- **Current week:** Week 1 — Tech setup ([checklist](../planning/04-tech-setup-checklist.md))
+- **Current week:** Week 1 — Tech setup ([checklist](../planning/04-tech-setup-checklist.md)) — **Mac-complete ✅** (shop-machine hardware items remain)
 - **Stack:** Locked — see [ADR 0001](../decisions/0001-tech-stack.md) (Tauri 2 + React/TS + Rust + rusqlite + Supabase)
 
 ## Legend
@@ -38,15 +38,15 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 7 | Add Zustand + TanStack Query | ✅ | installed; providers wired when first used |
 | 8 | Add react-hook-form + zod | ✅ | installed; used from Week 3 |
 | 9 | Add rusqlite (Rust side) | ✅ | `bundled`; `db_healthcheck` writes `pos-dev.sqlite` |
-| 10 | Add supabase-js (TS side) | ⬜ | |
+| 10 | Add supabase-js (TS side) | ✅ | client + `cloudHealthcheck()` in `src/lib/supabase.ts` |
 | 11 | TS strict mode, ESLint, Prettier | ✅ | flat ESLint 9 config; `noUncheckedIndexedAccess` on |
 | 12 | Husky + lint-staged + `tsc --noEmit` hook | ✅ | pre-commit live |
 | 13 | First conventional commit | ✅ | baseline scaffold + docs |
 | 14 | GitHub repo (private) + push | ✅ | personal account via PAT/HTTPS |
 | 15 | CI: install / tsc / lint / test on push | ✅ | GitHub Actions green on push/PR |
-| 16 | Supabase account + project provisioned | ⬜ | |
-| 17 | `.env.local` (gitignored) + `.env.example` | ⬜ | |
-| 18 | One successful Supabase call → "Cloud OK" (gate 6) | ⬜ | |
+| 16 | Supabase account + project provisioned | ✅ | project in ap-south-1 (Mumbai) |
+| 17 | `.env.local` (gitignored) + `.env.example` | ✅ | new-format publishable key; service-role excluded |
+| 18 | One successful Supabase call → "Cloud OK" (gate 6) | ✅ | GoTrue health endpoint 200 |
 | 19 | Vitest wired (smoke test) | ✅ | `tests/smoke.test.ts` green |
 
 ### Shop-machine (deferred — needs Windows + hardware)
@@ -69,7 +69,7 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 | 3 | Button prints barcode label | 🚫 |
 | 4 | Scanner types barcode into input | 🚫 |
 | 5 | SQLite file created on disk, openable in DB Browser | ✅ |
-| 6 | One successful Supabase call → "Cloud OK" | ⬜ |
+| 6 | One successful Supabase call → "Cloud OK" | ✅ |
 | 7 | `tauri build` installs + launches on clean Windows VM | 🚫 |
 
 > Gate items 2–4 and 7 cannot close on the Mac. Week 1 is "Mac-complete" when 1, 5, 6 pass
@@ -79,8 +79,9 @@ needing hardware or a Windows installer is marked 🚫 and batched for a shop-ma
 
 ## Next action
 
-Install Rust + scaffold Tauri on the Mac (rows 2–3). When `pnpm tauri dev` opens a window,
-report back → then merge into repo and wire libraries.
+All Mac-doable Week 1 items are ✅. Two tracks open:
+1. **Shop-machine session** — close gate items 2–4 (printers + scanner) and 7 (Windows installer) on the shop's Windows machine. This is the rest of Week 1.
+2. **Week 2 (Mac-doable now)** — DB schema for all entities, versioned migration runner, append-only event log + envelope, local PIN auth + roles. Start whenever.
 
 ## Blockers
 
